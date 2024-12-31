@@ -48,7 +48,7 @@ Provides API endpoints for managing tasks in the MongoDB database.
 
 5. Start the Node.js server:
    
-    ```npx nodemon server```
+    ```npm start```
 
 
 ## MongoDB
