@@ -19,7 +19,7 @@ Provides API endpoints for managing tasks in the MongoDB database.
 
 1. Navigate to the front directory:
    
-   ```cd front```
+   ```cd front/todo```
    
 2. Install dependencies:
    
