@@ -12,6 +12,6 @@ router.put('/put',todoPutController)
 
 router.delete('/delete',todoDeleteController)
 
-router.post('/complete',todoCompleteController)
+router.put('/complete',todoCompleteController)
 
 module.exports =  router

@@ -28,7 +28,7 @@ export function Todo({todo, handleDeleteTask}) {
     async function handleComplete(){
         if(completed==false){
             try{
-                await axios.post('http://localhost:3000/todos/complete',{id:todo._id});
+                await axios.put('http://localhost:3000/todos/complete',{id:todo._id});
                 setCompleted(true)
             }
             catch(error){
