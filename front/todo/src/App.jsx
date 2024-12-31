@@ -1,14 +1,14 @@
-import './App.css'
-import {TodoList} from "./features/todoList/TodoList.jsx";
-import {Header} from "./components/Header.jsx";
+import "./App.css";
+import { TodoList } from "./features/todoList/TodoList.jsx";
+import { Header } from "./components/Header.jsx";
 
 function App() {
-  return (
-    <>
-        <Header/>
-        <TodoList/>
-    </>
-  )
+    return (
+        <>
+            <Header />
+            <TodoList />
+        </>
+    );
 }
 
-export default App
+export default App;
