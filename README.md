@@ -11,18 +11,30 @@ Handles the user interface and interacts with the backend through API calls.
 Powered by Node.js.
 Provides API endpoints for managing tasks in the MongoDB database.
 
+
+
 # Getting Started
 Frontend (React)
 
-```npm install```
+1. Navigate to the front directory: ```cd front```
+2. Install dependencies: ```npm install```
+3. Start the server: ```npm run dev```
 
-```npm run dev```
 
 Backend (Node.js)
 
-```npm install```
+1. Navigate to the back directory: ```cd back```
+2. Install dependencies: ```npm install```
+3. Create a .env file in the root directory of the backend.
+4. Add the following to the .env file (replace {{URL CONNECTS TO MongoDB}} with your actual MongoDB connection string): ```MONGODB_URL="{{URL CONNECTS TO MongoDB}}"```
+5. Start the Node.js server: ```npx nodemon server```
 
-```npx nodemon server```
+
+MongoDB
+1. Create a `todoList` database.
+2. Inside the `todoList` database, create a `todos` collection.
+
+
 
 # Technologies Used
 
