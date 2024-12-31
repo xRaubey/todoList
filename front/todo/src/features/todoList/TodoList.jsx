@@ -40,11 +40,16 @@ export function TodoList() {
 
 
     async function handleAddTask(){
-        const result = await axios.post('http://localhost:3000/todos/post', {title: newTask});
-        //alert('Posted successfully!');
+        if(newTask){
+            const result = await axios.post('http://localhost:3000/todos/post', {title: newTask});
+            //alert('Posted successfully!');
 
-        setTodos([...todos,result.data])
-        setNewTask('')
+            setTodos([...todos,result.data])
+            setNewTask('')
+        }
+        else{
+            console.log('Task shouldn\'t be empty.')
+        }
     }
 
 

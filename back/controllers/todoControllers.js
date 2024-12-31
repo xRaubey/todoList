@@ -1,7 +1,11 @@
 const todoModel = require('../models/todoModel')
+const {AppError} = require("../utils/errors");
 const todoPostController = async (req,res)=>{
   try{
     const title = req.body.title;
+    if(!title){
+        throw new AppError('Title is required', 422);
+    }
     const result =  new todoModel({title:title});
     await result.save();
     if(!result){
@@ -10,7 +14,9 @@ const todoPostController = async (req,res)=>{
     res.status(200).json(result)
   }
   catch (e){
-    res.status(e.statusCode).json({error:e.message});
+
+      console.log(e)
+    res.status(e.statusCode || 500).json({error:e.message});
   }
 }
 
@@ -24,7 +30,7 @@ const todoGetController = async (req,res)=>{
 
   }
   catch (e){
-   res.status(e.statusCode).send(e.message);
+   res.status(e.statusCode || 500).send(e.message);
   }
 }
 
@@ -42,7 +48,7 @@ const todoPutController = async (req,res)=>{
     res.status(200).json(result)
   }
   catch (e){
-   res.status(e.statusCode).json({error:e.message});
+   res.status(e.statusCode || 500).json({error:e.message});
   }
 }
 
@@ -56,7 +62,7 @@ const todoDeleteController = async (req,res)=>{
       res.status(200).json(result)
   }
   catch (e){
-   res.status(e.statusCode).json({error:e.message});
+   res.status(e.statusCode || 500).json({error:e.message});
   }
 }
 
@@ -70,7 +76,7 @@ const todoCompleteController = async (req,res)=>{
         res.status(200).json(result)
     }
     catch (e){
-        res.status(e.statusCode).json({error:e.message});
+        res.status(e.statusCode || 500).json({error:e.message});
     }
 }
 module.exports = {todoDeleteController,todoPutController,todoPostController,todoGetController, todoCompleteController}

@@ -1,6 +1,6 @@
 import {useState} from "react";
 import axios from "axios";
-import {Button, ListItem, ListItemText, TableCell, TableRow, TextField} from "@mui/material";
+import {Button, ListItemText, TableCell, TableRow, TextField} from "@mui/material";
 import './Todo.css'
 
 export function Todo({todo, handleDeleteTask}) {
@@ -40,8 +40,6 @@ export function Todo({todo, handleDeleteTask}) {
         }
 
     }
-
-
 
 
     return (

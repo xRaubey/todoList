@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const express = require('express');
 const todoRouter = require('./routes/todoRouter')
+require('dotenv').config()
 
 
 const app = express();
@@ -9,7 +10,7 @@ const app = express();
 app.use(express.json())
 app.use(cors())
 
-mongoose.connect('mongodb://localhost:27017/todoList')
+mongoose.connect(process.env.MONGODB_URL)
     .then(()=>{
         app.listen(3000,()=>{
             console.log("Server started on port 3000");
