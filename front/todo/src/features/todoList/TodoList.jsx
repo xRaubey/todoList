@@ -32,25 +32,36 @@ export function TodoList() {
     }, []);
 
     async function handleAddTask() {
-        if (newTask) {
-            const result = await axios.post("http://localhost:3000/todos/post", {
-                title: newTask,
-            });
-            setTodos([...todos, result.data]);
-            setNewTask("");
-        } else {
-            console.log("Task shouldn't be empty.");
+        try{
+            if (newTask) {
+                const result = await axios.post("http://localhost:3000/todos/post", {
+                    title: newTask,
+                });
+                setTodos([...todos, result.data]);
+                setNewTask("");
+            } else {
+                console.log("Task shouldn't be empty.");
+            }
+        }
+        catch (e) {
+            alert(e)
         }
     }
 
     async function handleDeleteTask(id) {
-        const result = await axios.delete(
-            "http://localhost:3000/todos/delete/" + id,
-        );
-        const newTodos = todos.filter((todo) => todo._id != result.data._id);
+        try{
+            const result = await axios.delete(
+                "http://localhost:3000/todos/delete/" + id,
+            );
+            const newTodos = todos.filter((todo) => todo._id !== result.data._id);
 
-        setTodos([...newTodos]);
-        setNewTask("");
+            setTodos([...newTodos]);
+            setNewTask("");
+        }
+        catch (e){
+            alert(e)
+        }
+
     }
 
     return (
