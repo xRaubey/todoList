@@ -4,7 +4,6 @@ import {Todo} from "./Todo.jsx";
 import {
     Box,
     Button,
-    List,
     Paper,
     Table,
     TableBody,
@@ -54,7 +53,7 @@ export function TodoList() {
 
 
     async function handleDeleteTask(id){
-        const result = await axios.delete('http://localhost:3000/todos/delete',{data:{id:id}});
+        const result = await axios.delete('http://localhost:3000/todos/delete/'+id);
         //alert('Deleted successfully!');
 
         const newTodos = todos.filter(todo=>todo._id!=result.data._id);

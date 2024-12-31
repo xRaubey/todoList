@@ -37,7 +37,7 @@ const todoGetController = async (req,res)=>{
 const todoPutController = async (req,res)=>{
   try{
     const newTitle = req.body.title;
-    const id = req.body.id;
+    const id = req.params.id;
     const result = await todoModel.findByIdAndUpdate(id,
         {title:newTitle},
         { new: true }
@@ -54,7 +54,7 @@ const todoPutController = async (req,res)=>{
 
 const todoDeleteController = async (req,res)=>{
   try{
-      const id = req.body.id;
+      const id = req.params.id;
      const result = await todoModel.findByIdAndDelete(id);
       if(!result){
           throw new AppError('User Not Found',404)
@@ -68,7 +68,7 @@ const todoDeleteController = async (req,res)=>{
 
 const todoCompleteController = async (req,res)=>{
     try{
-        const id = req.body.id;
+        const id = req.params.id;
         const result = await todoModel.findByIdAndUpdate(id,{completed: true}, {new: true});
         if(!result){
             throw new AppError('Complete Error',500)

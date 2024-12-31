@@ -3,18 +3,21 @@ import axios from "axios";
 import {Button, ListItemText, TableCell, TableRow, TextField} from "@mui/material";
 import './Todo.css'
 
+// eslint-disable-next-line react/prop-types
 export function Todo({todo, handleDeleteTask}) {
 
     const [editable, setEditable] = useState(false);
     const [editContent, setEditContent] = useState("");
+    // eslint-disable-next-line react/prop-types
     const [task, setTask] = useState(todo.title);
+    // eslint-disable-next-line react/prop-types
     const [completed, setCompleted] = useState(todo.completed);
 
 
     async function handleEdit(){
         try{
             if(editable==true && editContent){
-                const result = await axios.put('http://localhost:3000/todos/put',{id:todo._id,title:editContent});
+                const result = await axios.put('http://localhost:3000/todos/put/'+todo._id,{title:editContent});
                 console.log(result)
                 setTask(result.data.title)
             }
@@ -28,7 +31,7 @@ export function Todo({todo, handleDeleteTask}) {
     async function handleComplete(){
         if(completed==false){
             try{
-                await axios.put('http://localhost:3000/todos/complete',{id:todo._id});
+                await axios.put('http://localhost:3000/todos/complete/'+todo._id);
                 setCompleted(true)
             }
             catch(error){

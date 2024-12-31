@@ -8,10 +8,10 @@ router.post('/post',todoPostController)
 
 router.get('/get',todoGetController)
 
-router.put('/put',todoPutController)
+router.put('/put/:id',todoPutController)
 
-router.delete('/delete',todoDeleteController)
+router.delete('/delete/:id',todoDeleteController)
 
-router.put('/complete',todoCompleteController)
+router.put('/complete/:id',todoCompleteController)
 
 module.exports =  router
