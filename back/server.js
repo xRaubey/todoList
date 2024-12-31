@@ -4,7 +4,6 @@ const express = require('express');
 const todoRouter = require('./routes/todoRouter')
 require('dotenv').config()
 
-
 const app = express();
 
 app.use(express.json())
@@ -20,8 +19,6 @@ mongoose.connect(process.env.MONGODB_URL)
         console.log(e)
         process.exit(1);
     })
-
-
 
 app.use('/todos',todoRouter)
 app.all('*', (req, res)=>{

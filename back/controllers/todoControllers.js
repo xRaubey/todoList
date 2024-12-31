@@ -14,8 +14,6 @@ const todoPostController = async (req,res)=>{
     res.status(200).json(result)
   }
   catch (e){
-
-      console.log(e)
     res.status(e.statusCode || 500).json({error:e.message});
   }
 }
@@ -27,7 +25,6 @@ const todoGetController = async (req,res)=>{
       throw new AppError('No Todos',404)
      }
     res.status(200).json(result)
-
   }
   catch (e){
    res.status(e.statusCode || 500).send(e.message);
