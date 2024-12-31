@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1fb726c-ea59-4a5a-a674-bf02ae4703a6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/todo/src/features/todoList/Todo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/todo/src/features/todoList/Todo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo/src/features/todoList/TodoList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/todo/src/features/todoList/TodoList.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="e1fb726c-ea59-4a5a-a674-bf02ae4703a6" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,7 +63,7 @@
       <option name="presentableId" value="Default" />
       <updated>1735596221656</updated>
       <workItem from="1735596222776" duration="31206000" />
-      <workItem from="1735664083665" duration="230000" />
+      <workItem from="1735664083665" duration="676000" />
     </task>
     <servers />
   </component>
